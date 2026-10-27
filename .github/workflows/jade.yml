@@ -1,0 +1,31 @@
+name: "Festival"
+run-name: "ocean"
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  id-token: write
+  pages: write
+  contents: read
+concurrency:
+  group: "DOGWOOD"
+  cancel-in-progress: true
+jobs:
+  COVE:
+    runs-on: ubuntu-24.04
+    environment:
+      name: "github-pages"
+      url: ${{ steps.GORGE.outputs.page_url }}
+    steps:
+      - name: "iris"
+        uses: actions/checkout@v5
+      - name: "BADGER"
+        uses: actions/configure-pages@v5
+      - name: "talc"
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ github.workspace }}
+      - name: "Spruce"
+        id: GORGE
+        uses: actions/deploy-pages@v4
